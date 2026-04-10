@@ -1,0 +1,132 @@
+/* 1. Base Setup */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    background: url('backgroun_image.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* 2. Section Styling (Creating the "Two Pages") */
+.page-section {
+    min-height: 100vh; /* Each section takes full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* "Stretched" width for a more open feel */
+}
+
+/* 3. The Modern Glass Card - Dark Mode Fix */
+.resume-card {
+    background: rgba(61, 43, 31, 0.98); /* Solid Deep Chocolate */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    
+    /* This forces the main color to white for everything inside */
+    color: #ffffff !important; 
+}
+
+/* Remove or modify the card hover if you no longer want the strips */
+.resume-card:hover {
+    transform: scale(1.01);
+    background: rgba(78, 54, 39, 1); /* Slightly lighter chocolate on hover */
+}
+/* 4. Text Visibility Fix */
+p, li, b, span, div {
+    color: #ffffff !important; /* Bright white */
+    line-height: 1.8;
+}
+
+/* 5. Headings & Hover State */
+h1, h2, h3, h4 {
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: default;
+    color: #ffffff !important; /* Forces headings to be white */
+}
+
+/* Headings Hover: Changed from black to gold so they stay visible */
+h1:hover, h2:hover, h3:hover, h4:hover {
+    color: #FFD700 !important; /* Gold hover */
+    transform: translateX(10px);
+}
+
+/* Section Dividers (the lines under Education, Skills, etc.) */
+h2 {
+    font-size: 1.3rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* White transparent line */
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+/* Standard text and list items */
+.highlight {
+    background: rgba(255, 255, 255, 0.15); /* Frosted glass look */
+    padding: 5px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    color: #ffffff !important;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* 6. Layout Helpers */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.content-split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* 7. Specific Elements */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Specific styling for the SGPA score box */
+.highlight {
+    background: #000000 !important; /* Pure black surrounding */
+    color: #ffffff !important;    /* Bright white text */
+    padding: 5px 15px;            /* Extra breathing room */
+    border-radius: 8px;           /* Rounded corners to match the card */
+    display: inline-block;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Thin white border to define the shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);  /* Depth effect */
+    margin-top: 5px;
+}
+p, li { line-height: 1.8; color: #444; }
+
+/* 8. Mobile Responsiveness */
+@media (max-width: 850px) {
+    .header-flex { flex-direction: column-reverse; text-align: center; }
+    .content-split, .grid-layout { grid-template-columns: 1fr; }
+    .resume-card { padding: 30px; }
+    h1 { font-size: 2.5rem; }
+}
